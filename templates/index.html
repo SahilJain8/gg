@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - Brand</title>
+    <link rel="stylesheet" href="static/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
+</head>
+
+<body>
+    <nav class="navbar navbar-dark navbar-expand-md sticky-top py-3" id="mainNav">
+        <div class="container"><a class="navbar-brand d-flex align-items-center" href="/"></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+               
+            </div>
+        </div>
+    </nav>
+    <header class="bg-dark">
+        <div class="container pt-4 pt-xl-5">
+            <div class="row pt-5">
+                <div class="col-md-8 col-lg-8 col-xl-6 text-center text-md-start mx-auto">
+                    <div class="text-center">
+                        <p class="fw-bold text-success mb-2">Happy birthday upload to see something</p>
+                        <h4 class="fw-bold">  <form method="post" action="/upload" enctype="multipart/form-data">
+                            <input type="file" name="image">
+                            <input type="submit" value="Upload">
+                          </form></h4>
+                        {% if img  %}
+                        <img src="{{ url_for('static', filename=img) }}" width="400px" height="500px">
+                        <h4 id="typing-text" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"></h4>
+                        <audio controls autoplay>
+                            <source src="static/Happy Birthday English 2.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                          </audio>
+                      
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col-12 col-lg-10 mx-auto">
+                    {%  if u==0 %}
+                    <div class="position-relative" style="display: flex;flex-wrap: wrap;justify-content: flex-end;">
+                        <div style="position: relative;flex: 0 0 45%;transform: translate3d(-15%, 35%, 0);"><img class="img-fluid" data-bss-parallax="" data-bss-parallax-speed="0.8" src="static/assets/img/products/9octBhTso-XqrKZqUrpuFi5XymjAHff_yMIDO6Jh5YY.webp"></div>
+                        <div style="position: relative;flex: 0 0 45%;transform: translate3d(-5%, 20%, 0);"></div>
+                        <div style="position: relative;flex: 0 0 60%;transform: translate3d(0, 0%, 0);"><img class="img-fluid" data-bss-parallax="" data-bss-parallax-speed="0.25" src="static/EokDVkLUwAAzXa0.jpg" style="margin-right: 201px;"></div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <section class="py-5"></section>
+    <footer class="bg-dark"></footer>
+    <script>
+        const text = "Happy birthday, Anaya Bhatt. May your day be as beautiful and radiant as the sakura blossoms in the spring. May your life be filled with joy and happiness, and may you never have to face any curses or misfortunes. As the Strongest sorcerer, I know the power of words and I offer you my sincerest wishes for a fantastic year ahead, where you can fulfill all your dreams and achieve greatness. I hope this new year brings you closer to the person you want to become. Cheers to another year of life and new beginnings. Happy birthday once again";
+        const typingText = document.getElementById("typing-text");
+        let i = 0;
+        function typeNextChar() {
+          typingText.innerHTML += text.charAt(i);
+          i++;
+          if (i < text.length) {
+            setTimeout(typeNextChar, 50); 
+          }
+        }
+        typeNextChar(); 
+      </script>
+    <script src="static/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="static/assets/js/bold-and-dark.js"></script>
+</body>
+
+</html>
